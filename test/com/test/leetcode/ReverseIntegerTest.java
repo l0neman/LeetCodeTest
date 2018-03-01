@@ -8,7 +8,7 @@ public class ReverseIntegerTest {
   @Test
   public void test() {
     ReverseInteger reverseInteger = new ReverseInteger();
-    StdOut.println(reverseInteger.reverse(1534236469));
-    StdOut.println(reverseInteger.reverse(-236469));
+    StdOut.println(reverseInteger.reverse2(1534236469));
+//    StdOut.println(reverseInteger.reverse2(-236469));
   }
 }

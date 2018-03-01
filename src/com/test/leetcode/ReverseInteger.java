@@ -4,6 +4,19 @@ import java.util.LinkedList;
 
 public class ReverseInteger {
 
+  /* 改进算法 */
+  public int reverse2(int x) {
+    long result = 0;
+    while (x != 0) {
+      result = result * 10 + x % 10;
+      if (result > Integer.MAX_VALUE || result < Integer.MIN_VALUE) {
+        return 0;
+      }
+      x /= 10;
+    }
+    return (int) result;
+  }
+
   public int reverse(int x) {
     LinkedList<Integer> stack = new LinkedList<>();
     while (x != 0) {
