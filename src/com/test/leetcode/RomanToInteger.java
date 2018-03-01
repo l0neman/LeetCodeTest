@@ -19,6 +19,7 @@ public class RomanToInteger {
       }
     }
     return 0;
+
   }
 
   private static int power10(int exponent) {
