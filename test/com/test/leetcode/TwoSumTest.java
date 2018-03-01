@@ -11,9 +11,9 @@ public class TwoSumTest {
   @Test
   public void test() {
     final TwoSum twoSum = new TwoSum();
-    final int[] sum = twoSum.twoSum(new int[]{
-        2, 7, 11, 15
-    }, 26);
+    final int[] sum = twoSum.twoSumWithHashTable2(new int[]{
+        4, 1, 8, 6, 9
+    }, 14);
     StdOut.println(sum[0]);
     StdOut.println(sum[1]);
   }
