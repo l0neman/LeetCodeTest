@@ -9,17 +9,18 @@ public class RomanToInteger {
 
   public int romanToInt(String s) {
     int result = 0;
-    for (int i = 0; i < KEYS.length; i++) {
-      if (s.endsWith(KEYS[i])) {
-        s = s.substring(0, s.length() - KEYS[i].length());
+    for (int i = KEYS.length - 1; i >= 0; ) {
+      if (s.startsWith(KEYS[i])) {
+        s = s.substring(KEYS[i].length(), s.length());
         result += power10(i / 9) * (i % 9 + 1);
-        if (s.length() == 0) {
-          return result;
-        }
+        if (s.length() == 0) {  return result; }
+        /* 跳至下一层，优化效率 */
+        i = i / 9 * 9 - 1;
+      } else {
+        i--;
       }
     }
     return 0;
-
   }
 
   private static int power10(int exponent) {
