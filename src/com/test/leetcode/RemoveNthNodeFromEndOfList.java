@@ -10,13 +10,6 @@ public class RemoveNthNodeFromEndOfList {
     for (; i < n + 1 && fast != null; i++) {
       fast = fast.next;
     }
-    if (i == n && fast == null) {
-      /* head node */
-      ListNode t = head;
-      head = head.next;
-      t.next = null;
-      return head;
-    }
     if (i == n + 1) {
       while (fast != null) {
         slow = slow.next;
@@ -24,6 +17,12 @@ public class RemoveNthNodeFromEndOfList {
       }
       ListNode t = slow.next;
       slow.next = slow.next.next;
+      t.next = null;
+    }
+    if (fast == null && i == n) {
+      /* head node */
+      ListNode t = head;
+      head = head.next;
       t.next = null;
     }
     return head;
